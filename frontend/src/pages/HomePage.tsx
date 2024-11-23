@@ -155,7 +155,18 @@ const HomePage: React.FC = () => {
           {reminders.length === 0 ? (
             <p className="text-white">No reminders to show.</p>
           ) : (
-            reminders.map(renderReminder) // Use renderReminder for each reminder
+            reminders.map((reminder, index) => (
+              <div
+                key={index}
+                className="bg-[#1d2a3a] p-4 mb-4 rounded-lg shadow-lg text-white"
+              >
+                <h3 className="font-semibold">{reminder.title}</h3>
+                <p>{reminder.description}</p>
+                <p className="text-sm text-gray-400">
+                  {reminder.dueDate} at {reminder.dueTime}
+                </p>
+              </div>
+            ))
           )}
         </div>
       </div>

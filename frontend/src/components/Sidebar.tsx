@@ -8,7 +8,13 @@ interface SidebarProps {
   handleCreateReminderPopup: () => void;
 }
 
+<<<<<<< HEAD
 const Sidebar: React.FC<SidebarProps> = ({ handleCreateReminderPopup }) => {
+=======
+const Sidebar: React.FC<SidebarProps> = ({
+  handleCreateReminderPopup
+}) => {
+>>>>>>> 7cc700bd7f2b7f5604b1541ea2a0b164dc41129c
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false); // Initialize with false
 
@@ -24,15 +30,31 @@ const Sidebar: React.FC<SidebarProps> = ({ handleCreateReminderPopup }) => {
     setIsPopupOpen((prev) => !prev);
   };
 
+<<<<<<< HEAD
   const handleLogout = () => {
     // Clear the login status from localStorage
     localStorage.removeItem("token");
+=======
+  const handleLoginRedirect = () => {
+    navigate("/login"); // Use navigate to redirect to login
+  };
+
+  const handleLogout = () => {
+    // Clear the login status from localStorage
+    localStorage.removeItem("isLoggedIn");
+>>>>>>> 7cc700bd7f2b7f5604b1541ea2a0b164dc41129c
     setIsLoggedIn(false); // Update the state
   };
 
   const handleLogin = () => {
     // Set the login status in localStorage
+<<<<<<< HEAD
     navigate("/login");
+=======
+    handleLoginRedirect();
+    localStorage.setItem("isLoggedIn", "true");
+    setIsLoggedIn(true); // Update the state
+>>>>>>> 7cc700bd7f2b7f5604b1541ea2a0b164dc41129c
   };
 
   return (
