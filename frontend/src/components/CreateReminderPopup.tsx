@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineClose } from "react-icons/ai";
 // Import the context
-=======
-import { useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
-import { useReminderContext } from "../context/ReminderContext";
- // Import the context
->>>>>>> 7cc700bd7f2b7f5604b1541ea2a0b164dc41129c
 
 interface CreateReminderPopupProps {
   handleCreateReminderPopup: () => void;
@@ -18,7 +11,6 @@ interface CreateReminderPopupProps {
 const CreateReminderPopup: React.FC<CreateReminderPopupProps> = ({
   handleCreateReminderPopup,
 }) => {
-<<<<<<< HEAD
   const [title, setTitle] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [dueTime, setDueTime] = useState("");
@@ -51,22 +43,6 @@ const CreateReminderPopup: React.FC<CreateReminderPopupProps> = ({
       console.log(error);
       alert("Failed to create a reminder");
     }
-=======
-  const { addReminder } = useReminderContext(); // Access the addReminder function from context
-  const [title, setTitle] = useState("");
-  const [dueDate, setDueDate] = useState("");
-  const [dueTime, setDueTime] = useState("");
-  const [description, setDescription] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Create the reminder object
-    const newReminder = { title, dueDate, dueTime, description };
-
-    // Add the reminder to the global state
-    addReminder(newReminder);
->>>>>>> 7cc700bd7f2b7f5604b1541ea2a0b164dc41129c
 
     // Close the popup after submission
     handleCreateReminderPopup();
@@ -121,22 +97,6 @@ const CreateReminderPopup: React.FC<CreateReminderPopupProps> = ({
             />
           </div>
 
-<<<<<<< HEAD
-=======
-          <div>
-            <label className="block text-sm font-semibold text-white mb-2">
-              Description
-            </label>
-            <textarea
-              className="w-full p-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-600"
-              placeholder="Describe the reminder"
-              rows={4}
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </div>
-
->>>>>>> 7cc700bd7f2b7f5604b1541ea2a0b164dc41129c
           <div className="flex justify-center">
             <button
               type="submit"
