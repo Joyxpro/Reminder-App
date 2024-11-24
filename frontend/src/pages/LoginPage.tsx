@@ -29,7 +29,7 @@ const LoginPage = () => {
 
       if (response.status === 200) {
         localStorage.setItem("token", `Bearer ${response.data.token}`);
-        navigate("/");
+        navigate("/home");
       } else {
         alert("Failed to Signin");
       }
